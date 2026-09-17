@@ -24,12 +24,20 @@ area = st.number_input(
     value=1000
 )
 
-if area > 3000:
-    st.error("House area has crossed the maximum limit of 3000 SQ FT.")
 
-# Prediction button
-if st.button("Predict Price"):
+if 600 <= area <= 3000:
+    if st.button("Predict Price"):
+        price = model.predict([[area]])
+        st.success(f"Predicted House Price: ₹{price[0]:.2f} Lakhs")
+else:
+    st.error("Please enter house area between 600 and 3000 SQ FT.")
+    
+# if area > 3000:
+#     st.error("House area has crossed the maximum limit of 3000 SQ FT.")
 
-    price = model.predict([[area]])
+# # Prediction button
+# if st.button("Predict Price"):
 
-    st.success(f"Predicted House Price: ₹{price[0]:.2f} Lakhs")
+#     price = model.predict([[area]])
+
+#     st.success(f"Predicted House Price: ₹{price[0]:.2f} Lakhs")
