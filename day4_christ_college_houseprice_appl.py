@@ -24,6 +24,9 @@ area = st.number_input(
     value=1000
 )
 
+if area > 3000:
+    st.error("House area has crossed the maximum limit of 3000 SQ FT.")
+
 # Prediction button
 if st.button("Predict Price"):
 
