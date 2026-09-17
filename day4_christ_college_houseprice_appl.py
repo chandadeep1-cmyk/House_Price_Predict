@@ -20,7 +20,7 @@ st.title("House Price Predictor")
 area = st.number_input(
     "Enter House Area (SQ FT):",
     min_value=1,
-    max_value=3000,
+    max_value=5000,
     value=1000
 )
 
